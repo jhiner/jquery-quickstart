@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auth0-jQuery</title>
+    <meta charset="utf-8">
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdn.auth0.com/w2/auth0-7.1.min.js"></script>
+
+    <script src="auth0-variables.js"></script>
+    <script src="app.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <p id="msg">To login, click Sign In below.</p>
+    <div id="profile" style="display:none;">
+      <img alt="avatar" class="avatar" style="display:none;">
+      <p>Welcome <span class="nickname"></span></p>
+      <button type="button" id="api-call">Authenticated API Call</button>
+    </div>
+    <button type="submit" id="btn-login">Sign In</button>
+    <button type="submit" class="btn-logout" style="display:none;">Sign Out</button>
+  </body>
+</html>
