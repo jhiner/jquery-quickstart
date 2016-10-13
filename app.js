@@ -75,9 +75,9 @@ $(document).ready(function() {
     auth0.login({
       responseType: 'id_token token',
       scope: 'openid profile read:todo',
-      audience: 'http://todoapi2.api',
-      prompt: 'consent',
-      sso: false
+      audience: 'http://todoapi2.api'
+      // uncomment if you want to force the user to be prompted for consent every time
+      // prompt: 'consent', 
     });
   });
 
