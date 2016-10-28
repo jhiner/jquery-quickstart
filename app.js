@@ -36,8 +36,6 @@ $(document).ready(function() {
         $('#profile').show();
         $('#msg').hide();
       });
-      // If offline_access was a requested scope
-      // You can grab the result.refresh_token here
 
   } else if (result && result.error) {
     console.log('error: ' + result.error);
