@@ -30,9 +30,11 @@ $(document).ready(function() {
     localStorage.setItem('id_token', result.idToken);
 
     auth0.getProfile(result.idToken, function (err, profile) {
-      $('.nickname').text(profile.nickname);
+      if (profile) {
+        $('.nickname').text(profile.nickname);
+        $('.avatar').attr('src', profile.picture).show();
+      }
       $('#login-link').hide();
-      $('.avatar').attr('src', profile.picture).show();
       $('.btn-logout').show();
       $('#btn-refresh').show();
       $('#profile').show();
@@ -86,7 +88,7 @@ $(document).ready(function() {
     console.log('Starting refreshToken');
     auth0.silentAuthentication({
       responseType: 'id_token token',
-      scope: 'openid profile read:todo',
+      scope: 'openid profile read:todo create:todo',
       audience: 'http://todoapi2.api'
     }, function(err, result){
       localStorage.setItem('access_token', result.accessToken);
